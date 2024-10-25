@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.bakhdev.home.DetailScreen
-import com.bakhdev.home.HomeScreen
+import com.bakhdev.home.ui.HomeScreen
 
 @Composable
 fun NavigationGraph(modifier: Modifier, navController: NavHostController) {

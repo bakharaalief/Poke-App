@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.jetbrainsKotlinKapt)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -76,6 +78,12 @@ dependencies {
     //serialization
     implementation(libs.kotlinx.serialization.json)
 
+    //dagger hilt
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.hilt.compiler)
+
     //module
     implementation(project(":feature:home"))
+    implementation(project(":core"))
+    implementation(project(":core-ui"))
 }

@@ -1,4 +1,4 @@
-package com.bakhdev.pokeapp.theme
+package com.bakhdev.core_ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -19,8 +19,8 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = brownPokemon,
-    onPrimary = Color.White,
+    primary = Color.White,
+    onPrimary = Color.Black,
     secondary = redPokemon,
     tertiary = Pink40
 )
