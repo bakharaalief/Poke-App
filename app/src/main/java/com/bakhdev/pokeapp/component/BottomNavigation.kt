@@ -11,14 +11,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.bakhdev.core_ui.component.CustomText
 import com.bakhdev.core_ui.theme.PokeAppTheme
 import com.bakhdev.core_ui.theme.redPokemon
 
@@ -77,9 +80,11 @@ fun BottomNavigation(
                     }
                 },
                 label = {
-                    Text(
+                    CustomText(
                         text = bottomNavigationItem.title,
-                        color = MaterialTheme.colorScheme.onPrimary
+                        fontSize = 16.sp,
+                        color = MaterialTheme.colorScheme.onPrimary,
+                        fontWeight = FontWeight.Bold,
                     )
                 }
             )

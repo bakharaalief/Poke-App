@@ -12,33 +12,27 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
+import com.bakhdev.core_ui.component.CustomText
+import com.bakhdev.core_ui.component.LoadImage
 import com.bakhdev.core_ui.helper.ColorHelper
 import com.bakhdev.core_ui.helper.StringHelper.toPokemonIndex
 import com.bakhdev.core_ui.theme.PokeAppTheme
 import com.bakhdev.core_ui.theme.brownPokemon
-import com.bakhdev.home.R
 import com.bakhdev.pokemon.helper.Dummy
 import com.bakhdev.pokemon.model.Pokemon
 import java.util.Locale
 
 @Composable
 fun PokemonItem(pokemon: Pokemon, onClickItem: (pokemon: Pokemon) -> Unit) {
-
     Card(
         onClick = { onClickItem(pokemon) },
         modifier = Modifier.border(
@@ -53,20 +47,12 @@ fun PokemonItem(pokemon: Pokemon, onClickItem: (pokemon: Pokemon) -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            AsyncImage(
-                model = ImageRequest.Builder(LocalContext.current)
-                    .data(pokemon.url)
-                    .build(),
-                contentDescription = "poke image",
-                placeholder = painterResource(id = R.drawable.ic_launcher_background),
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.size(180.dp),
-            )
+            LoadImage(modifier = Modifier.size(180.dp), url = pokemon.url, desc = "poke image")
 
-            Text(
+            CustomText(
                 modifier = Modifier.fillMaxWidth(),
                 text = pokemon.id.toPokemonIndex(),
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 18.sp,
                 textAlign = TextAlign.Center,
                 color = brownPokemon
@@ -74,7 +60,7 @@ fun PokemonItem(pokemon: Pokemon, onClickItem: (pokemon: Pokemon) -> Unit) {
 
             Spacer(modifier = Modifier.height(5.dp))
 
-            Text(
+            CustomText(
                 modifier = Modifier.fillMaxWidth(),
                 text = pokemon.name.capitalize(Locale.ROOT),
                 fontWeight = FontWeight.Bold,

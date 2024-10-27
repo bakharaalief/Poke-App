@@ -22,7 +22,7 @@ private val LightColorScheme = lightColorScheme(
     primary = Color.White,
     onPrimary = Color.Black,
     secondary = redPokemon,
-    tertiary = Pink40
+    tertiary = Pink40,
 )
 
 @Composable
