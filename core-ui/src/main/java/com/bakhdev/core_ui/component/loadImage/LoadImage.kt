@@ -1,5 +1,6 @@
-package com.bakhdev.core_ui.component
+package com.bakhdev.core_ui.component.loadImage
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -33,3 +34,4 @@ fun LoadImage(modifier: Modifier, url: String, desc: String) {
         modifier = modifier,
     )
 }
+

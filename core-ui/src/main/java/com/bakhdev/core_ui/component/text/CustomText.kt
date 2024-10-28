@@ -1,4 +1,4 @@
-package com.bakhdev.core_ui.component
+package com.bakhdev.core_ui.component.text
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

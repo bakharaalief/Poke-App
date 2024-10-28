@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bakhdev.core_ui.component.CustomText
+import com.bakhdev.core_ui.component.text.CustomText
 import com.bakhdev.core_ui.theme.PokeAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)

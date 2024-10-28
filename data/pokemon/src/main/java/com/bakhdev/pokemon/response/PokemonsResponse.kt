@@ -2,7 +2,7 @@ package com.bakhdev.pokemon.response
 
 import com.google.gson.annotations.SerializedName
 
-data class PokemonsResponse(
+data class ListPokemonResponse(
 
     @field:SerializedName("next")
     val next: String? = null,

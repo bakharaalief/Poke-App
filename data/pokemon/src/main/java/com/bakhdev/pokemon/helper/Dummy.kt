@@ -1,20 +1,20 @@
 package com.bakhdev.pokemon.helper
 
-import com.bakhdev.pokemon.model.Pokemon
+import com.bakhdev.pokemon.model.PokemonUiModel
 
 object Dummy {
 
-    fun createPokemonsDummy(): List<Pokemon> {
-        val listPokemon: ArrayList<Pokemon> = ArrayList()
+    fun createPokemonsDummy(): List<PokemonUiModel> {
+        val listPokemonUiModel: ArrayList<PokemonUiModel> = ArrayList()
         for (i in 0..100) {
-            listPokemon.add(
-                Pokemon(id = i, name = "bulbasaur", color = "green", url = "google.com")
+            listPokemonUiModel.add(
+                PokemonUiModel(id = i, name = "bulbasaur", color = "green", url = "google.com")
             )
         }
-        return listPokemon
+        return listPokemonUiModel
     }
 
-    fun createPokemonDummy(): Pokemon {
-        return Pokemon(id = 1, name = "bulbasaur", color = "green", url = "google.com")
+    fun createPokemonDummy(): PokemonUiModel {
+        return PokemonUiModel(id = 1, name = "bulbasaur", color = "green", url = "google.com")
     }
 }

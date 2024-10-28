@@ -46,4 +46,8 @@ dependencies {
     //dagger hilt
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
+
+    //paging
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.compose)
 }

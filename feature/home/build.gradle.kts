@@ -62,6 +62,7 @@ dependencies {
     //coil
     implementation(libs.coil.compose)
     implementation(libs.coil.network)
+    implementation(libs.coil.gif)
 
     //dagger hilt
     implementation(libs.dagger.hilt)
@@ -69,6 +70,10 @@ dependencies {
 
     //view model
     implementation(libs.androidx.viewmodel.compose)
+
+    //paging
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.compose)
 
     //library module
     implementation(project(":data:pokemon"))

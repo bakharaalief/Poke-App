@@ -21,37 +21,37 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bakhdev.core_ui.component.CustomText
-import com.bakhdev.core_ui.component.LoadImage
+import com.bakhdev.core_ui.component.text.CustomText
+import com.bakhdev.core_ui.component.loadImage.LoadImage
 import com.bakhdev.core_ui.helper.ColorHelper
 import com.bakhdev.core_ui.helper.StringHelper.toPokemonIndex
 import com.bakhdev.core_ui.theme.PokeAppTheme
 import com.bakhdev.core_ui.theme.brownPokemon
 import com.bakhdev.pokemon.helper.Dummy
-import com.bakhdev.pokemon.model.Pokemon
+import com.bakhdev.pokemon.model.PokemonUiModel
 import java.util.Locale
 
 @Composable
-fun PokemonItem(pokemon: Pokemon, onClickItem: (pokemon: Pokemon) -> Unit) {
+fun PokemonItem(pokemonUiModel: PokemonUiModel, onClickItem: (pokemonUiModel: PokemonUiModel) -> Unit) {
     Card(
-        onClick = { onClickItem(pokemon) },
+        onClick = { onClickItem(pokemonUiModel) },
         modifier = Modifier.border(
             BorderStroke(3.dp, MaterialTheme.colorScheme.onPrimary),
             shape = RoundedCornerShape(18.dp)
         ),
         shape = RoundedCornerShape(18.dp),
-        colors = CardDefaults.cardColors(containerColor = ColorHelper.getColorPicker(pokemon.color))
+        colors = CardDefaults.cardColors(containerColor = ColorHelper.getColorPicker(pokemonUiModel.color))
     ) {
         Column(
             modifier = Modifier.padding(horizontal = 10.dp, vertical = 18.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            LoadImage(modifier = Modifier.size(180.dp), url = pokemon.url, desc = "poke image")
+            LoadImage(modifier = Modifier.size(180.dp), url = pokemonUiModel.url, desc = "poke image")
 
             CustomText(
                 modifier = Modifier.fillMaxWidth(),
-                text = pokemon.id.toPokemonIndex(),
+                text = pokemonUiModel.id.toPokemonIndex(),
                 fontWeight = FontWeight.Normal,
                 fontSize = 18.sp,
                 textAlign = TextAlign.Center,
@@ -62,7 +62,7 @@ fun PokemonItem(pokemon: Pokemon, onClickItem: (pokemon: Pokemon) -> Unit) {
 
             CustomText(
                 modifier = Modifier.fillMaxWidth(),
-                text = pokemon.name.capitalize(Locale.ROOT),
+                text = pokemonUiModel.name.capitalize(Locale.ROOT),
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp,
                 textAlign = TextAlign.Center,
@@ -78,6 +78,6 @@ fun PokemonItemPreview() {
     PokeAppTheme(
         dynamicColor = false
     ) {
-        PokemonItem(pokemon = Dummy.createPokemonDummy(), onClickItem = {})
+        PokemonItem(pokemonUiModel = Dummy.createPokemonDummy(), onClickItem = {})
     }
 }

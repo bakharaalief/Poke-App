@@ -51,6 +51,10 @@ dependencies {
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
 
+    //paging
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.compose)
+
     //module
     api(project(":domain:pokemon"))
 }

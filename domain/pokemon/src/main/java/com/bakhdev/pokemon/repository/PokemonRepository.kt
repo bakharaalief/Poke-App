@@ -1,8 +1,9 @@
 package com.bakhdev.pokemon.repository
 
-import com.bakhdev.pokemon.model.Pokemon
+import androidx.paging.PagingData
+import com.bakhdev.pokemon.model.PokemonUiModel
 import kotlinx.coroutines.flow.Flow
 
 interface PokemonRepository {
-    fun getPokemons(): Flow<List<Pokemon>>
+    fun getListPokemonPaging(): Flow<PagingData<PokemonUiModel>>
 }
